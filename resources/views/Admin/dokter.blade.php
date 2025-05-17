@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tambah Artikel</title>
+    <title>Tambah Dokter</title>
     <meta name="description" content="" />
 
     <!-- Favicon -->
@@ -66,12 +66,12 @@
 
                             <!-- Artikel Table -->
                             <div class="card">
-                                <h5 class="card-header">Artikel List</h5>
+                                <h5 class="card-header">Dokter List</h5>
 
                                 <!-- Button Tambah Artikel & search -->
                                 <div class="d-flex justify-content-between align-items-center mx-3 mt-4 mb-3">
                                     <!-- Search kiri -->
-                                    <form action="{{ route('admin.artikel.index') }}" method="GET" class="d-flex"
+                                    <form action="{{ route('admin.dokter.index') }}" method="GET" class="d-flex"
                                         style="max-width: 300px;">
                                         <input type="text" name="search" class="form-control me-2"
                                             placeholder="Cari artikel..." value="{{ request('search') }}">
@@ -81,8 +81,8 @@
                                     </form>
 
                                     <!-- Tambah Artikel kanan -->
-                                    <a href="{{ route('admin.artikel.create') }}" class="btn btn-primary">
-                                        <i class="bx bx-plus"></i> Tambah Artikel
+                                    <a href="{{ route('admin.dokter.create') }}" class="btn btn-primary">
+                                        <i class="bx bx-plus"></i> Tambah Dokter
                                     </a>
                                 </div>
 
@@ -93,26 +93,26 @@
                                         <thead class="table-dark">
                                             <tr>
                                                 <th>Thumbnail</th>
-                                                <th>Judul</th>
-                                                <th>Deskripsi</th>
-                                                <th>Penulis</th>
-                                                <th>Tanggal</th>
+                                                <th>Foto</th>
+                                                <th>Nama</th>
+                                                <th>Spesialisasi</th>
+                                                <th>Status</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody class="table-border-bottom-0">
-                                            @foreach ($artikels as $artikel)
+                                            @foreach ($dokters as $dokter)
                                                 <tr>
                                                     <td>
                                                         <!-- Menampilkan thumbnail jika ada -->
-                                                        @if ($artikel->thumbnail)
-                                                            <img src="{{ asset('storage/thumbnails/' . $artikel->thumbnail) }}"
+                                                        @if ($dokter->thumbnail)
+                                                            <img src="{{ asset('storage/thumbnails/' . $dokter->thumbnail) }}"
                                                                 alt="Thumbnail" width="150">
                                                         @else
                                                             <p>No thumbnail available</p>
                                                         @endif
                                                     </td>
-                                                    <td>{{ $artikel->judul }}</td>
+                                                    <td>{{ $dokter->Foto }}</td>
                                                     <td class="truncate" title="{{ $artikel->deskripsi }}">
                                                         {{ \Illuminate\Support\Str::limit($artikel->deskripsi, 100, '...') }}
                                                         <a href="{{ route('admin.artikel.show', $artikel->id) }}"

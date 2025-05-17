@@ -46,6 +46,14 @@
             </a>
         </li>
 
+                <!-- Dokter -->
+        <li class="menu-item active">
+            <a href="Dokter" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-sort-alt"></i>
+                <div class="text-truncate" data-i18n="Dokter">Dokter</div>
+            </a>
+        </li>
+
         <!-- Rekam Medis -->
         <li class="menu-item active">
             <a href="rekam-medis.html" class="menu-link">

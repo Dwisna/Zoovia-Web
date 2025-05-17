@@ -14,9 +14,10 @@ class AdminUserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create(
+        User::firstOrCreate(
+            
             [
-                'email' => 'admin@gmail.com',
+                'email' => 'admin@gmail.com'],[
                 'name' => 'Admin Zoovia',
                 'password' => Hash::make('admin123'), // Ganti sesuai kebutuhan
                 'role' => 'admin', // Pastikan field 'role' ada di tabel users
